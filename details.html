@@ -1,0 +1,21 @@
+<div ng-controller="detailCtrl">
+    <div>Fund Name: {{schemeName}}</div>
+    <p>
+        <div>Fund Price</div>
+        <div>
+            <table>
+                <tr>
+                    <td>Date</td>
+                    <td>Price</td>
+                </tr>
+                <tr ng-repeat="fundPrice in fundPriceList">
+                    <td>{{fundPrice.fundPK.prc_date | date:'dd MMM yyyy'}}</td>
+                    <td>{{fundPrice.navVal}}</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <canvas class="chart chart-line" chart-data="priceArr" chart-labels="lablesArr" chart-options="options"></canvas>
+        </div>
+    </p>
+</div>

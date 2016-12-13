@@ -1,0 +1,29 @@
+<div ng-controller="myCtrl">
+	<div>
+		<table>
+			<tr>
+				<td>Fund Type</td>
+				<td><select ng-model="selectedFundType" ng-options="x for x in fundTypeList" ng-change="searchFundHouseForType()">
+				</select></td>
+				<td>Fund House</td>
+				<td><select ng-model="selectedFundHouse" ng-options="x for x in fundHouseList" ng-change="searchFundsForHouseAndType()">
+				</select></td>
+			</tr>
+		</table>
+	</div>
+	
+	<table>
+		<tr>
+			<th>Scheme Code</th>
+			<th>Scheme Name</th>
+			<th>ISIN (Growth)</th>
+			<th>ISIN (Repayment)</th>
+		</tr>
+		<tr ng-repeat="nav in navList">
+			<td><a href="#details/{{nav.schemeCode}}">{{nav.schemeCode}}</a></td>
+			<td>{{nav.schemeName}}</td>
+			<td>{{nav.isingrowth}}</td>
+			<td>{{nav.isinreInv}}</td>
+		</tr>
+	</table>
+</div>

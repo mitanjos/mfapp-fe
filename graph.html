@@ -1,0 +1,16 @@
+<div ng-controller="graphController">
+    <table>
+        <tr>
+            <td>
+                <div id="graphImage">
+                    {{graphData}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"></canvas>
+            </td>
+        </tr>
+    </table>
+</div>
